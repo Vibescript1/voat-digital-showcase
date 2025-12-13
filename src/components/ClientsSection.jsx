@@ -1,0 +1,326 @@
+import { Instagram, BadgeCheck, ArrowRight, Star, Quote } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+
+const clients = [
+  {
+    name: "Veevibe Events",
+    handle: "@veevibe_events",
+    url: "https://www.instagram.com/veevibe_events/",
+    logo: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=200&h=200&fit=crop",
+    testimonial: "Working with VOAT Network transformed our online presence. Their digital marketing strategies helped us increase our event bookings by 150%.",
+    rating: 5
+  },
+  {
+    name: "Veevibe Sports",
+    handle: "@veevibesports",
+    url: "https://www.instagram.com/veevibesports/",
+    logo: "https://images.unsplash.com/photo-1461896836934-ffe07ba938cd?w=200&h=200&fit=crop",
+    testimonial: "The team's creativity and technical expertise are unmatched. Our engagement rates have skyrocketed since we started working together.",
+    rating: 5
+  },
+  {
+    name: "Navya Developers",
+    handle: "@navyadevelopers.official",
+    url: "https://www.instagram.com/navyadevelopers.official/",
+    logo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop",
+    testimonial: "VOAT's web development team delivered a stunning website that perfectly represents our brand. The attention to detail is incredible.",
+    rating: 4
+  },
+  {
+    name: "Sky Logistics",
+    handle: "@sky_travels_and_logistics",
+    url: "https://www.instagram.com/sky_travels_and_logistics/",
+    logo: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=200&h=200&fit=crop",
+    testimonial: "Their logistics management system streamlined our operations and improved efficiency by 40%. Highly recommended!",
+    rating: 5
+  },
+  {
+    name: "Skyrydr",
+    handle: "@skyrydr_",
+    url: "https://www.instagram.com/skyrydr_/",
+    logo: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=200&h=200&fit=crop",
+    testimonial: "The mobile app developed by VOAT Network has been a game-changer for our ride-sharing service. The user experience is exceptional.",
+    rating: 5
+  },
+  {
+    name: "Foodie Express",
+    handle: "@foodieexpress",
+    url: "#",
+    logo: "https://images.unsplash.com/photo-1504674900247-087703934569?w=200&h=200&fit=crop",
+    testimonial: "Our online ordering system has never been better. The team's attention to detail and customer service is outstanding.",
+    rating: 4
+  },
+  {
+    name: "TechNova",
+    handle: "@technova",
+    url: "#",
+    logo: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=200&h=200&fit=crop",
+    testimonial: "The AI solutions provided by VOAT Network have revolutionized how we handle customer support. Response times are down 60%.",
+    rating: 5
+  },
+  {
+    name: "EcoStyle",
+    handle: "@ecostyle.official",
+    url: "#",
+    logo: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=200&h=200&fit=crop",
+    testimonial: "Their e-commerce platform is both beautiful and functional. Our sales have increased by 85% since the redesign.",
+    rating: 4
+  },
+  {
+    name: "FitLife",
+    handle: "@fitlife.app",
+    url: "#",
+    logo: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=200&h=200&fit=crop",
+    testimonial: "The fitness tracking app they built has helped us engage our users like never before. The UI/UX is exceptional.",
+    rating: 5
+  },
+  {
+    name: "UrbanHomes",
+    handle: "@urbanhomes.realestate",
+    url: "#",
+    logo: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=200&h=200&fit=crop",
+    testimonial: "The virtual tour feature they implemented has significantly increased our property viewings. A true partner in our success.",
+    rating: 5
+  }
+];
+
+const Rating = ({ stars }) => {
+  return (
+    <div className="flex justify-center gap-0.5 mb-3">
+      {[...Array(5)].map((_, i) => (
+        <Star 
+          key={i} 
+          className={`w-4 h-4 ${i < stars ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`} 
+        />
+      ))}
+    </div>
+  );
+};
+
+export const ClientsSection = () => {
+  const [activeFilter, setActiveFilter] = useState('all');
+  const [filteredClients, setFilteredClients] = useState(clients);
+  const scrollContainer = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  // Filter clients based on active filter
+  useEffect(() => {
+    if (activeFilter === 'all') {
+      setFilteredClients(clients);
+    } else {
+      setFilteredClients(clients.filter(client => client.rating === 5));
+    }
+  }, [activeFilter]);
+
+  // Mouse events for horizontal scroll
+  const startDragging = (e) => {
+    setIsDragging(true);
+    setStartX(e.pageX - scrollContainer.current.offsetLeft);
+    setScrollLeft(scrollContainer.current.scrollLeft);
+  };
+
+  const stopDragging = () => {
+    setIsDragging(false);
+  };
+
+  const onDragging = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainer.current.offsetLeft;
+    const walk = (x - startX) * 2; // Scroll faster
+    scrollContainer.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const scroll = (direction) => {
+    const container = scrollContainer.current;
+    const scrollAmount = 300; // Adjust scroll amount as needed
+    container.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth'
+    });
+  };
+
+  return (
+    <section id="clients" className="py-20 bg-gradient-to-b from-background to-muted/20 relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-20 -right-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-accent/5 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-4xl mx-auto text-center mb-12">
+          <motion.span 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4"
+          >
+            Trusted Partners
+          </motion.span>
+          
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-6"
+          >
+            Our <span className="text-gradient">Valued Clients</span>
+          </motion.h2>
+          
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-muted-foreground text-lg max-w-2xl mx-auto"
+          >
+            Trusted by innovative brands and growing businesses across various industries
+          </motion.p>
+
+          {/* Filter Buttons */}
+          <motion.div 
+            className="flex flex-wrap justify-center gap-3 mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <button
+              onClick={() => setActiveFilter('all')}
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                activeFilter === 'all'
+                  ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/20'
+                  : 'bg-accent/10 text-foreground/80 hover:bg-accent/20'
+              }`}
+            >
+              All Clients
+            </button>
+            <button
+              onClick={() => setActiveFilter('featured')}
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
+                activeFilter === 'featured'
+                  ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/20'
+                  : 'bg-accent/10 text-foreground/80 hover:bg-accent/20'
+              }`}
+            >
+              <Star className="w-4 h-4" />
+              Featured (5★)
+            </button>
+          </motion.div>
+        </div>
+
+        {/* Scroll buttons for mobile */}
+        <div className="hidden md:flex justify-between items-center mb-6">
+          <button 
+            onClick={() => scroll('left')}
+            className="p-2 rounded-full bg-background border border-border hover:bg-accent/20 text-foreground/70 hover:text-foreground transition-colors"
+            aria-label="Scroll left"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="m15 18-6-6 6-6"/>
+            </svg>
+          </button>
+          <span className="text-sm text-muted-foreground">Swipe or use buttons to navigate</span>
+          <button 
+            onClick={() => scroll('right')}
+            className="p-2 rounded-full bg-background border border-border hover:bg-accent/20 text-foreground/70 hover:text-foreground transition-colors"
+            aria-label="Scroll right"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
+
+        {/* Clients Grid */}
+        <div 
+          ref={scrollContainer}
+          onMouseDown={startDragging}
+          onMouseUp={stopDragging}
+          onMouseLeave={stopDragging}
+          onMouseMove={onDragging}
+          className="flex gap-6 pb-8 overflow-x-auto scrollbar-hide snap-x snap-mandatory cursor-grab active:cursor-grabbing"
+        >
+          {filteredClients.map((client, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="flex-shrink-0 w-80 bg-card rounded-2xl border border-border/50 hover:border-primary/30 hover:shadow-xl transition-all duration-300 overflow-hidden group"
+            >
+              <div className="p-6">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="relative flex-shrink-0">
+                    <img
+                      src={client.logo}
+                      alt={client.name}
+                      className="w-14 h-14 object-cover rounded-xl border-2 border-border group-hover:border-primary transition-colors"
+                    />
+                    <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-primary rounded-full flex items-center justify-center border-2 border-card">
+                      <BadgeCheck className="w-3 h-3 text-primary-foreground" />
+                    </div>
+                  </div>
+                  <div className="text-left">
+                    <h3 className="font-heading font-semibold text-foreground">
+                      {client.name}
+                    </h3>
+                    <p className="text-xs text-muted-foreground">{client.handle}</p>
+                  </div>
+                </div>
+
+                <Rating stars={client.rating} />
+                
+                <div className="relative mb-6">
+                  <Quote className="absolute -top-2 left-0 text-muted-foreground/20 w-8 h-8" />
+                  <p className="text-sm text-muted-foreground italic pl-6">
+                    "{client.testimonial}"
+                  </p>
+                </div>
+
+                <Button
+                  asChild
+                  variant="outline"
+                  size="sm"
+                  className="w-full border-primary/20 text-primary hover:bg-primary hover:text-primary-foreground group/button transition-all"
+                >
+                  <a href={client.url} target="_blank" rel="noopener noreferrer">
+                    <Instagram className="w-4 h-4 mr-2 group-hover/button:scale-110 transition-transform" />
+                    Follow on Instagram
+                    <ArrowRight className="ml-2 w-4 h-4 opacity-0 group-hover/button:opacity-100 group-hover/button:translate-x-1 transition-all" />
+                  </a>
+                </Button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* View All Button */}
+        <motion.div 
+          className="text-center mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="group border-primary/20 hover:border-primary/40"
+          >
+            View All Case Studies
+            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Button>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
