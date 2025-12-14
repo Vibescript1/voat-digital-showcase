@@ -1408,13 +1408,13 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background-color: #fccf2b;
+  background-color: #ffcd19;
   color: #0a385b;
   font-weight: 600;
 }
 
 .navbar-call-button .get-started-btn:hover {
-  background-color: #fff;
+  background-color: #ccad1f;
   color: #0a385b;
 }
 

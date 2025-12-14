@@ -9,23 +9,29 @@ const slides = [
   {
     title: "Transform Your Vision Into Reality",
     subtitle: "DIGITAL EXCELLENCE",
-    description: "We craft high-quality digital experiences that help brands grow, scale, and lead in competitive markets.",
+    description:
+      "We craft high-quality digital experiences that help brands grow, scale, and lead in competitive markets.",
     buttonText: "View Portfolio",
-    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1920&q=80",
+    image:
+      "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1920&q=80",
   },
   {
     title: "Innovative Solutions That Scale",
     subtitle: "CUTTING-EDGE TECHNOLOGY",
-    description: "From startups to enterprises, we build modern web solutions that evolve with your business.",
+    description:
+      "From startups to enterprises, we build modern web solutions that evolve with your business.",
     buttonText: "View Portfolio",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80",
+    image:
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80",
   },
   {
     title: "Partner With Industry Experts",
     subtitle: "TRUSTED BY BRANDS",
-    description: "Work with professionals who understand design, technology, and long-term business growth.",
+    description:
+      "Work with professionals who understand design, technology, and long-term business growth.",
     buttonText: "View Portfolio",
-    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1920&q=80",
+    image:
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1920&q=80",
   },
 ];
 
@@ -78,34 +84,34 @@ export const HeroSection = () => {
 
               {/* Content */}
               <div className="relative z-10 min-h-screen flex items-center">
-                <div className="container mx-auto px-8 md:px-12 lg:px-20">
+                <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     className="max-w-xl text-left"
                   >
-                    <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-white/10 text-white">
-                      <Sparkles className="w-4 h-3" />
-                      <span className="text-xs tracking-wider font-semibold">
+                    <div className="inline-flex items-center gap-2 mb-4 sm:mb-6 px-3 py-1 sm:px-4 sm:py-2 rounded-full bg-white/10 text-white">
+                      <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
+                      <span className="text-xs sm:text-sm tracking-wider font-semibold">
                         {slide.subtitle}
                       </span>
                     </div>
 
-                    <h1 className="text-2xl md:text-3xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-snug sm:leading-tight mb-4 sm:mb-6">
                       {slide.title}
                     </h1>
 
-                    <p className="text-gray-200 text-base md:text-lg mb-8">
+                    <p className="text-gray-200 text-sm sm:text-base md:text-lg mb-4 sm:mb-8">
                       {slide.description}
                     </p>
 
                     <Button
                       size="lg"
-                      className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-6 rounded-lg shadow-lg"
+                      className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg shadow-lg flex items-center"
                     >
                       {slide.buttonText}
-                      <ArrowRight className="ml-3 w-4 h-4" />
+                      <ArrowRight className="ml-2 sm:ml-3 w-3.5 sm:w-4 h-3.5 sm:h-4" />
                     </Button>
                   </motion.div>
                 </div>
@@ -116,7 +122,7 @@ export const HeroSection = () => {
       </div>
 
       {/* Dots */}
-      <div className="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-20">
+      <div className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 flex flex-col gap-3 sm:gap-4 z-20">
         {slides.map((_, index) => (
           <DotButton
             key={index}

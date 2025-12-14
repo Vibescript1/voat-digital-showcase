@@ -5,58 +5,64 @@ const videos = [
   {
     title: "Dandiya Night",
     url: "https://www.instagram.com/reel/DOvV8mFEwa8",
-    thumbnail: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=400&h=600&fit=crop",
+    thumbnail:
+      "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=400&h=600&fit=crop",
     category: "Event",
   },
   {
     title: "DGP Edit",
     url: "https://www.instagram.com/reel/DQYSArmDC3X",
-    thumbnail: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400&h=600&fit=crop",
+    thumbnail:
+      "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400&h=600&fit=crop",
     category: "Promo",
   },
   {
     title: "New Year Edit",
     url: "https://www.instagram.com/reel/DRjCJXjEwe0",
-    thumbnail: "https://images.unsplash.com/photo-1467810563316-b5476525c0f9?w=400&h=600&fit=crop",
+    thumbnail:
+      "https://images.unsplash.com/photo-1467810563316-b5476525c0f9?w=400&h=600&fit=crop",
     category: "Celebration",
   },
   {
     title: "Glowfest Edit 1",
     url: "https://www.instagram.com/reel/DPrAVQFDRPA",
-    thumbnail: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=600&fit=crop",
+    thumbnail:
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=600&fit=crop",
     category: "Festival",
   },
   {
     title: "Glowfest Edit 2",
     url: "https://www.instagram.com/reel/DPwMaqJk-mD",
-    thumbnail: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=600&fit=crop",
+    thumbnail:
+      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=600&fit=crop",
     category: "Festival",
   },
   {
     title: "Pottery Workshop",
     url: "https://www.instagram.com/reel/DPn9A-wE600",
-    thumbnail: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&h=600&fit=crop",
+    thumbnail:
+      "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&h=600&fit=crop",
     category: "Workshop",
   },
 ];
 
 export const VideoSection = () => {
   return (
-    <section id="videos" className="py-16 bg-background">
+    <section id="videos" className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <span className="inline-block px-4 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
+        <div className="max-w-3xl mx-auto text-center mb-10 md:mb-12">
+          <span className="inline-block px-3 md:px-4 py-1 md:py-1.5 rounded-full bg-accent/10 text-accent text-xs md:text-sm font-medium mb-2 md:mb-4">
             Video Production
           </span>
-          <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="font-heading text-2xl md:text-5xl font-bold text-foreground mb-4 md:mb-6">
             Video <span className="text-gradient">Showcase</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-sm md:text-lg">
             Professional video editing that tells your story and engages your audience
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
           {videos.map((video, index) => (
             <a
               key={index}
@@ -70,20 +76,20 @@ export const VideoSection = () => {
                 alt={video.title}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
-              
+
               <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/20 to-transparent" />
-              
+
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-10 h-10 rounded-full bg-primary/80 flex items-center justify-center group-hover:scale-110 group-hover:bg-primary transition-all duration-300">
-                  <Play className="w-4 h-4 text-primary-foreground ml-1" fill="currentColor" />
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/80 flex items-center justify-center group-hover:scale-110 group-hover:bg-primary transition-all duration-300">
+                  <Play className="w-3 h-3 md:w-4 md:h-4 text-primary-foreground ml-1" fill="currentColor" />
                 </div>
               </div>
 
-              <div className="absolute bottom-0 left-0 right-0 p-3">
-                <span className="text-xs text-accent font-medium uppercase tracking-wider">
+              <div className="absolute bottom-0 left-0 right-0 p-2 md:p-3">
+                <span className="text-[9px] md:text-xs text-accent font-medium uppercase tracking-wider">
                   {video.category}
                 </span>
-                <h3 className="font-heading text-sm font-semibold text-secondary-foreground mt-1 line-clamp-2">
+                <h3 className="font-heading text-xs md:text-sm font-semibold text-secondary-foreground mt-1 line-clamp-2">
                   {video.title}
                 </h3>
               </div>
@@ -91,16 +97,20 @@ export const VideoSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-8">
+        <div className="text-center mt-6 md:mt-8">
           <Button
             asChild
             variant="outline"
             size="lg"
             className="border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground"
           >
-            <a href="https://www.instagram.com/voatnetwork/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.instagram.com/voatnetwork/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               View All Reels
-              <ExternalLink className="ml-2 w-4 h-4" />
+              <ExternalLink className="ml-1 md:ml-2 w-3 h-3 md:w-4 md:h-4" />
             </a>
           </Button>
         </div>

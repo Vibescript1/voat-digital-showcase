@@ -6,9 +6,9 @@ const LoadingSpinner = () => {
       <div className="flex flex-col items-center">
         <div className="relative mb-8">
           <div className="absolute inset-0 bg-blue-500 rounded-full blur-xl opacity-30 animate-pulse"></div>
-          <img 
-            src="/loader.png" 
-            alt="Loading..." 
+          <img
+            src="/loader.png"
+            alt="Loading..."
             className="w-24 h-24 md:w-32 md:h-32 animate-spin"
           />
         </div>
