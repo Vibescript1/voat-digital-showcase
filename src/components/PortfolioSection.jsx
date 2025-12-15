@@ -8,55 +8,74 @@ const websites = [
     url: "https://veevibes.netlify.app/",
     image: "images/veevibe-img.png",
     category: "Events",
-    description:
-      "A modern event management platform that helps organizers create and manage events with advanced ticketing and attendee engagement features.",
-    tags: ["React", "Node.js", "MongoDB", "Stripe"],
-    github: "#",
     year: "2023",
+    description:
+      "A modern event management platform built for seamless event creation, ticketing, and attendee engagement.",
+    tags: ["React", "Node.js", "MongoDB", "Stripe"],
+    overview:
+      "VeeVibes is an end-to-end event management platform designed to help organizers create, promote, and manage events effortlessly. It supports event listings, secure ticket payments, and attendee tracking in real time.",
+    skillsDescription:
+      "The project required strong frontend skills using React for UI, Node.js for backend APIs, MongoDB for flexible event data storage, and Stripe integration for secure online payments.",
   },
+
   {
     name: "VOAT Network",
     url: "https://voatnetwork.com",
     image: "images/voatnetwork-img.png",
     category: "Agency",
-    description:
-      "Digital agency website showcasing our services, portfolio, and expertise in web development and digital marketing solutions.",
-    tags: ["Next.js", "Tailwind CSS", "Framer Motion", "Contentful"],
-    github: "#",
     year: "2023",
+    description:
+      "A digital agency website showcasing services, portfolio, and brand credibility.",
+    tags: ["Next.js", "Tailwind CSS", "Framer Motion", "Contentful"],
+    overview:
+      "VOAT Network is a high-performance agency website focused on conversions and brand storytelling. It highlights services, case studies, and client trust through a modern and responsive design.",
+    skillsDescription:
+      "This project demonstrates expertise in Next.js for SEO-optimized pages, Tailwind CSS for scalable UI design, Framer Motion for smooth animations, and Contentful for easy content management.",
   },
+
   {
     name: "ManaHire",
     url: "https://manahire.com",
     image: "images/manahire-img.png",
     category: "HR Tech",
-    description:
-      "Comprehensive HR platform that streamlines recruitment, onboarding, and employee management for modern businesses.",
-    tags: ["React", "NestJS", "PostgreSQL", "AWS"],
-    github: "#",
     year: "2022",
+    description:
+      "An HR platform that simplifies hiring, onboarding, and employee management.",
+    tags: ["React", "NestJS", "PostgreSQL", "AWS"],
+    overview:
+      "ManaHire streamlines the hiring lifecycle by managing job postings, candidate tracking, onboarding workflows, and employee records through a centralized dashboard.",
+    skillsDescription:
+      "Built using React for an interactive frontend, NestJS for scalable backend architecture, PostgreSQL for relational data integrity, and AWS for cloud hosting and security.",
   },
+
   {
     name: "Skyrydr",
     url: "https://skyrydr.com",
     image: "images/skyrydr-img.png",
     category: "Transportation",
-    description:
-      "Ride-sharing platform connecting commuters with reliable transportation services across major cities.",
-    tags: ["React Native", "Node.js", "MongoDB", "Google Maps API"],
-    github: "#",
     year: "2023",
+    description:
+      "A ride-sharing platform connecting users with fast and reliable transportation.",
+    tags: ["React Native", "Node.js", "MongoDB", "Google Maps API"],
+    overview:
+      "Skyrydr is a ride-sharing solution focused on real-time location tracking, ride booking, and driver-rider coordination across urban areas.",
+    skillsDescription:
+      "This project showcases mobile app development using React Native, backend services with Node.js, MongoDB for real-time ride data, and Google Maps API for navigation and tracking.",
   },
+
   {
     name: "Sky Logistics Hub",
     url: "https://www.skylogisticshub.com",
     image: "images/skylogistics-img.png",
     category: "Logistics",
-    description:
-      "End-to-end logistics management system providing real-time tracking and optimization for shipping and delivery services.",
-    tags: ["Vue.js", "Django", "PostgreSQL", "Docker"],
-    github: "#",
     year: "2022",
+    description:
+      "A logistics management system with real-time shipment tracking.",
+    tags: ["Vue.js", "Django", "PostgreSQL", "Docker"],
+    overview:
+      "Sky Logistics Hub provides businesses with tools to manage shipments, track deliveries, and optimize logistics operations through a centralized dashboard.",
+    skillsDescription:
+      "Developed using Vue.js for a responsive frontend, Django for backend processing, PostgreSQL for data accuracy, and Docker for scalable deployment.",
   },
   // {
   //   name: "Foodie Express",
@@ -194,6 +213,10 @@ export const PortfolioSection = () => {
                 src={selectedProject.image}
                 alt={selectedProject.name}
                 className="w-full h-full object-cover"
+                loading="lazy"
+                onError={(e) => {
+                  e.currentTarget.src = "/images/fallback.png";
+                }}
               />
             </div>
 

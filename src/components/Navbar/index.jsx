@@ -11,13 +11,14 @@ import "./index.css";
 
 class NavBar extends Component {
   state = {
-    isMobile: false,
+    isMobile: window.innerWidth < 768,
     menuOpen: false,
     showSpecialOffer: true,
     searchQuery: "",
     activeMenu: "",
     currentMessageIndex: 0,
     showPortfolioDropdown: false,
+    prevScollPos: 0,
   };
 
   componentDidMount() {
@@ -34,6 +35,10 @@ class NavBar extends Component {
 
   componentWillUnmount() {
     document.removeEventListener("mousedown", this.handleClickOutside);
+    document.removeEventListener("mousedown", this.handleClickOutside);
+    window.removeEventListener("resize", this.checkScreenSize);
+    window.removeEventListener("scroll", this.handleScroll);
+    clearInterval(this.carouselInterval);
   }
 
   handleClickOutside = (event) => {
@@ -359,7 +364,7 @@ class NavBar extends Component {
                 <>
                   {/* Left Section - Hamburger */}
                   <div className="navbar-hamburger" onClick={this.toggleMenu}>
-                    {menuOpen ? null : <Menu size={24} />}
+                    {menuOpen ? <X size={24} /> : <Menu size={24} />}
                   </div>
 
                   {/* Center Section - Logo */}
