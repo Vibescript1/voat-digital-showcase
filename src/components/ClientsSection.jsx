@@ -8,92 +8,92 @@ const clients = [
     name: "Veevibe Events",
     handle: "@veevibe_events",
     url: "https://www.instagram.com/veevibe_events/",
-    logo: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=200&h=200&fit=crop",
+    logo: "images/veevibe-img.png",
     testimonial:
-      "Working with VOAT Network transformed our online presence. Their digital marketing strategies helped us increase our event bookings by 150%.",
+      "VOAT Network boosted our event bookings by 150% with powerful digital marketing.",
     rating: 5,
   },
   {
     name: "Veevibe Sports",
     handle: "@veevibesports",
     url: "https://www.instagram.com/veevibesports/",
-    logo: "https://images.unsplash.com/photo-1461896836934-ffe07ba938cd?w=200&h=200&fit=crop",
+    logo: "images/veevibe-sports-img.png",
     testimonial:
-      "The team's creativity and technical expertise are unmatched. Our engagement rates have skyrocketed since we started working together.",
+      "Our engagement rates skyrocketed thanks to their creativity and expertise.",
     rating: 5,
-  },
-  {
-    name: "Navya Developers",
-    handle: "@navyadevelopers.official",
-    url: "https://www.instagram.com/navyadevelopers.official/",
-    logo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop",
-    testimonial:
-      "VOAT's web development team delivered a stunning website that perfectly represents our brand. The attention to detail is incredible.",
-    rating: 4,
   },
   {
     name: "Sky Logistics",
     handle: "@sky_travels_and_logistics",
     url: "https://www.instagram.com/sky_travels_and_logistics/",
-    logo: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=200&h=200&fit=crop",
+    logo: "images/skylogistics-img.png",
     testimonial:
-      "Their logistics management system streamlined our operations and improved efficiency by 40%. Highly recommended!",
+      "Our operations improved by 40% with their efficient logistics system.",
     rating: 5,
   },
   {
     name: "Skyrydr",
     handle: "@skyrydr_",
     url: "https://www.instagram.com/skyrydr_/",
-    logo: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=200&h=200&fit=crop",
+    logo: "images/skyrydr-img.png",
     testimonial:
-      "The mobile app developed by VOAT Network has been a game-changer for our ride-sharing service. The user experience is exceptional.",
+      "Their mobile app transformed our ride-sharing user experience.",
     rating: 5,
   },
-  {
-    name: "Foodie Express",
-    handle: "@foodieexpress",
-    url: "#",
-    logo: "https://images.unsplash.com/photo-1504674900247-087703934569?w=200&h=200&fit=crop",
-    testimonial:
-      "Our online ordering system has never been better. The team's attention to detail and customer service is outstanding.",
-    rating: 4,
-  },
-  {
-    name: "TechNova",
-    handle: "@technova",
-    url: "#",
-    logo: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=200&h=200&fit=crop",
-    testimonial:
-      "The AI solutions provided by VOAT Network have revolutionized how we handle customer support. Response times are down 60%.",
-    rating: 5,
-  },
-  {
-    name: "EcoStyle",
-    handle: "@ecostyle.official",
-    url: "#",
-    logo: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=200&h=200&fit=crop",
-    testimonial:
-      "Their e-commerce platform is both beautiful and functional. Our sales have increased by 85% since the redesign.",
-    rating: 4,
-  },
-  {
-    name: "FitLife",
-    handle: "@fitlife.app",
-    url: "#",
-    logo: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=200&h=200&fit=crop",
-    testimonial:
-      "The fitness tracking app they built has helped us engage our users like never before. The UI/UX is exceptional.",
-    rating: 5,
-  },
-  {
-    name: "UrbanHomes",
-    handle: "@urbanhomes.realestate",
-    url: "#",
-    logo: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=200&h=200&fit=crop",
-    testimonial:
-      "The virtual tour feature they implemented has significantly increased our property viewings. A true partner in our success.",
-    rating: 5,
-  },
+  // {
+  //   name: "Foodie Express",
+  //   handle: "@foodieexpress",
+  //   url: "#",
+  //   logo: "https://images.unsplash.com/photo-1504674900247-087703934569?w=200&h=200&fit=crop",
+  //   testimonial:
+  //     "Our online ordering system has never been better. The team's attention to detail and customer service is outstanding.",
+  //   rating: 4,
+  // },
+  // {
+  //   name: "Navya Developers",
+  //   handle: "@navyadevelopers.official",
+  //   url: "https://www.instagram.com/navyadevelopers.official/",
+  //   logo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop",
+  //   testimonial:
+  //     "Our engagement rates skyrocketed thanks to their creativity and expertise.",
+  //   rating: 4,
+  // },
+  // {
+  //   name: "TechNova",
+  //   handle: "@technova",
+  //   url: "#",
+  //   logo: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=200&h=200&fit=crop",
+  //   testimonial:
+  //     "The AI solutions provided by VOAT Network have revolutionized how we handle customer support. Response times are down 60%.",
+  //   rating: 5,
+  // },
+  // {
+  //   name: "EcoStyle",
+  //   handle: "@ecostyle.official",
+  //   url: "#",
+  //   logo: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=200&h=200&fit=crop",
+  //   testimonial:
+  //     "Their e-commerce platform is both beautiful and functional. Our sales have increased by 85% since the redesign.",
+  //   rating: 4,
+  // },
+  // {
+  //   name: "FitLife",
+  //   handle: "@fitlife.app",
+  //   url: "#",
+  //   logo: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=200&h=200&fit=crop",
+  //   testimonial:
+  //     "The fitness tracking app they built has helped us engage our users like never before. The UI/UX is exceptional.",
+  //   rating: 5,
+  // },
+  // {
+  //   name: "UrbanHomes",
+  //   handle: "@urbanhomes.realestate",
+  //   url: "#",
+  //   logo: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=200&h=200&fit=crop",
+  //   testimonial:
+  //     "The virtual tour feature they implemented has significantly increased our property viewings. A true partner in our success.",
+  //   rating: 5,
+  // },
 ];
 
 // Responsive rating stars
@@ -201,8 +201,8 @@ export const ClientsSection = () => {
             <button
               onClick={() => setActiveFilter("all")}
               className={`px-3 md:px-5 py-1 md:py-2 rounded-full text-xs md:text-sm font-medium transition-all duration-300 ${activeFilter === "all"
-                  ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
-                  : "bg-accent/10 text-foreground/80 hover:bg-accent/20"
+                ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
+                : "bg-accent/10 text-foreground/80 hover:bg-accent/20"
                 }`}
             >
               All Clients
@@ -210,8 +210,8 @@ export const ClientsSection = () => {
             <button
               onClick={() => setActiveFilter("featured")}
               className={`px-3 md:px-5 py-1 md:py-2 rounded-full text-xs md:text-sm font-medium flex items-center gap-1 md:gap-2 transition-all duration-300 ${activeFilter === "featured"
-                  ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
-                  : "bg-accent/10 text-foreground/80 hover:bg-accent/20"
+                ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
+                : "bg-accent/10 text-foreground/80 hover:bg-accent/20"
                 }`}
             >
               <Star className="w-3 h-3 md:w-4 md:h-4" />

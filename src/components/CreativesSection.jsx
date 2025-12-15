@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 const creatives = [
   {
     name: "Veevibe Creative",
-    url: "https://www.canva.com/design/DAG0iunSy9w/B3fptxMnY-29CyttHQeshA",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&h=800&fit=crop",
+    url: "https://www.canva.com/design/DAG0iunSy9w/B3fptxMnY-29CyttHQeshA/view?utm_content=DAG0iunSy9w&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hbebc1d606ahttps://www.canva.com/design/DAG0iunSy9w/B3fptxMnY-29CyttHQeshA/view?utm_content=DAG0iunSy9w&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hbebc1d606a",
+    image: "images/veevibe-creative.png",
     category: "Branding",
     description:
       "A bold branding concept designed to establish a strong visual identity through cohesive color systems, typography, and marketing creatives.",
@@ -15,8 +15,8 @@ const creatives = [
   },
   {
     name: "VOATFolio",
-    url: "https://www.canva.com/design/DAGyoWr5LSo/MI5--00i-3y6C1p3CUY4Zg",
-    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1200&h=800&fit=crop",
+    url: "https://www.canva.com/design/DAGyoWr5LSo/MI5--00i-3y6C1p3CUY4Zg/view?utm_content=DAGyoWr5LSo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4801397b43",
+    image: "images/voatfolio-creative.png",
     category: "Portfolio",
     description:
       "A clean and modern portfolio design showcasing projects, case studies, and creative storytelling for a digital-first brand.",
@@ -25,8 +25,8 @@ const creatives = [
   },
   {
     name: "DGP Event",
-    url: "https://www.canva.com/design/DAG12cpIsvU/ZGfDBQDrOqf-J0al9PIpkw",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=800&fit=crop",
+    url: "https://www.canva.com/design/DAG12cpIsvU/ZGfDBQDrOqf-J0al9PIpkw/view?utm_content=DAG12cpIsvU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3dac1ead5f",
+    image: "images/DGP-creative.png",
     category: "Event Design",
     description:
       "Event creatives designed to drive engagement, featuring posters, banners, and social media assets for promotions.",
@@ -35,8 +35,8 @@ const creatives = [
   },
   {
     name: "Creative Gallery",
-    url: "https://www.canva.com/design/DAG5Yh4Pluw/GxApzMz46N8jr-H19Z90lA",
-    image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1200&h=800&fit=crop",
+    url: "https://www.canva.com/design/DAG5Yh4Pluw/GxApzMz46N8jr-H19Z90lA/view?utm_content=DAG5Yh4Pluw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hadbfa92a22",
+    image: "images/other creative.png",
     category: "Marketing",
     description:
       "A curated gallery of marketing creatives crafted to enhance brand reach and visual storytelling across platforms.",
@@ -164,7 +164,8 @@ export const CreativesSection = () => {
               <img
                 src={selectedCreative.image}
                 alt={selectedCreative.name}
-                className="w-full h-full object-cover"
+                // className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center bg-muted group-hover:scale-105 transition-transform duration-700"
               />
             </div>
 

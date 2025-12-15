@@ -9,7 +9,7 @@ const LoadingSpinner = () => {
           <img
             src="/loader.png"
             alt="Loading..."
-            className="w-24 h-24 md:w-32 md:h-32 animate-spin"
+            className="w-24 h-24 md:w-32 md:h-32 animate-spin [animation-duration:3s] [animation-timing-function:linear]"
           />
         </div>
         <div className="text-center">

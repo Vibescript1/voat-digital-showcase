@@ -6,7 +6,7 @@ const websites = [
   {
     name: "VeeVibes",
     url: "https://veevibes.netlify.app/",
-    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&h=800&fit=crop",
+    image: "images/veevibe-img.png",
     category: "Events",
     description:
       "A modern event management platform that helps organizers create and manage events with advanced ticketing and attendee engagement features.",
@@ -17,7 +17,7 @@ const websites = [
   {
     name: "VOAT Network",
     url: "https://voatnetwork.com",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
+    image: "images/voatnetwork-img.png",
     category: "Agency",
     description:
       "Digital agency website showcasing our services, portfolio, and expertise in web development and digital marketing solutions.",
@@ -28,7 +28,7 @@ const websites = [
   {
     name: "ManaHire",
     url: "https://manahire.com",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=800&fit=crop",
+    image: "images/manahire-img.png",
     category: "HR Tech",
     description:
       "Comprehensive HR platform that streamlines recruitment, onboarding, and employee management for modern businesses.",
@@ -39,7 +39,7 @@ const websites = [
   {
     name: "Skyrydr",
     url: "https://skyrydr.com",
-    image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=800&fit=crop",
+    image: "images/skyrydr-img.png",
     category: "Transportation",
     description:
       "Ride-sharing platform connecting commuters with reliable transportation services across major cities.",
@@ -50,7 +50,7 @@ const websites = [
   {
     name: "Sky Logistics Hub",
     url: "https://www.skylogisticshub.com",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&h=800&fit=crop",
+    image: "images/skylogistics-img.png",
     category: "Logistics",
     description:
       "End-to-end logistics management system providing real-time tracking and optimization for shipping and delivery services.",
@@ -58,17 +58,17 @@ const websites = [
     github: "#",
     year: "2022",
   },
-  {
-    name: "Foodie Express",
-    url: "#",
-    image: "https://images.unsplash.com/photo-1504674900247-087703934569?w=1200&h=800&fit=crop",
-    category: "Food",
-    description:
-      "Food delivery platform connecting local restaurants with customers through a seamless ordering experience.",
-    tags: ["React", "Express", "MongoDB", "Stripe"],
-    github: "#",
-    year: "2023",
-  },
+  // {
+  //   name: "Foodie Express",
+  //   url: "#",
+  //   image: "https://images.unsplash.com/photo-1504674900247-087703934569?w=1200&h=800&fit=crop",
+  //   category: "Food",
+  //   description:
+  //     "Food delivery platform connecting local restaurants with customers through a seamless ordering experience.",
+  //   tags: ["React", "Express", "MongoDB", "Stripe"],
+  //   github: "#",
+  //   year: "2023",
+  // },
 ];
 
 export const PortfolioSection = () => {
