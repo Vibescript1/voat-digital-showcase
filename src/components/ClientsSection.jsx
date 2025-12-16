@@ -11,7 +11,8 @@ const clients = [
     logo: "images/veevibe-img.png",
     testimonial:
       "VOAT Network boosted our event bookings by 150% with powerful digital marketing.",
-    rating: 5,
+    rating: 4,
+    industry: "Event Management"
   },
   {
     name: "Veevibe Sports",
@@ -20,7 +21,8 @@ const clients = [
     logo: "images/veevibe-sports-img.png",
     testimonial:
       "Our engagement rates skyrocketed thanks to their creativity and expertise.",
-    rating: 5,
+    rating: 4,
+    industry: "Sports & Entertainment"
   },
   {
     name: "Sky Logistics",
@@ -30,6 +32,7 @@ const clients = [
     testimonial:
       "Our operations improved by 40% with their efficient logistics system.",
     rating: 5,
+    industry: "Logistics & Transportation"
   },
   {
     name: "Skyrydr",
@@ -38,62 +41,49 @@ const clients = [
     logo: "images/skyrydr-img.png",
     testimonial:
       "Their mobile app transformed our ride-sharing user experience.",
-    rating: 5,
+    rating: 4,
+    industry: "Transportation Tech"
   },
-  // {
-  //   name: "Foodie Express",
-  //   handle: "@foodieexpress",
-  //   url: "#",
-  //   logo: "https://images.unsplash.com/photo-1504674900247-087703934569?w=200&h=200&fit=crop",
-  //   testimonial:
-  //     "Our online ordering system has never been better. The team's attention to detail and customer service is outstanding.",
-  //   rating: 4,
-  // },
-  // {
-  //   name: "Navya Developers",
-  //   handle: "@navyadevelopers.official",
-  //   url: "https://www.instagram.com/navyadevelopers.official/",
-  //   logo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=200&fit=crop",
-  //   testimonial:
-  //     "Our engagement rates skyrocketed thanks to their creativity and expertise.",
-  //   rating: 4,
-  // },
-  // {
-  //   name: "TechNova",
-  //   handle: "@technova",
-  //   url: "#",
-  //   logo: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=200&h=200&fit=crop",
-  //   testimonial:
-  //     "The AI solutions provided by VOAT Network have revolutionized how we handle customer support. Response times are down 60%.",
-  //   rating: 5,
-  // },
-  // {
-  //   name: "EcoStyle",
-  //   handle: "@ecostyle.official",
-  //   url: "#",
-  //   logo: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=200&h=200&fit=crop",
-  //   testimonial:
-  //     "Their e-commerce platform is both beautiful and functional. Our sales have increased by 85% since the redesign.",
-  //   rating: 4,
-  // },
-  // {
-  //   name: "FitLife",
-  //   handle: "@fitlife.app",
-  //   url: "#",
-  //   logo: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=200&h=200&fit=crop",
-  //   testimonial:
-  //     "The fitness tracking app they built has helped us engage our users like never before. The UI/UX is exceptional.",
-  //   rating: 5,
-  // },
-  // {
-  //   name: "UrbanHomes",
-  //   handle: "@urbanhomes.realestate",
-  //   url: "#",
-  //   logo: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=200&h=200&fit=crop",
-  //   testimonial:
-  //     "The virtual tour feature they implemented has significantly increased our property viewings. A true partner in our success.",
-  //   rating: 5,
-  // },
+  {
+    name: "Navya Developers",
+    handle: "@navyadevelopers.official",
+    url: "https://www.instagram.com/navyadevelopers.official/",
+    logo: "images/navya-developers.png",
+    testimonial:
+      "Working with VOAT Network elevated our brand perception significantly.",
+    rating: 5,
+    industry: "Real Estate"
+  },
+  {
+    name: "TechNova Solutions",
+    handle: "@technova",
+    url: "https://www.instagram.com/technova/",
+    logo: "images/technova.png",
+    testimonial:
+      "The AI solutions provided have revolutionized our customer support.",
+    rating: 5,
+    industry: "Technology"
+  },
+  {
+    name: "EcoStyle Retail",
+    handle: "@ecostyle.official",
+    url: "https://www.instagram.com/ecostyle.official/",
+    logo: "images/ecostyle.png",
+    testimonial:
+      "Their e-commerce platform is both beautiful and functional.",
+    rating: 4,
+    industry: "Fashion & Retail"
+  },
+  {
+    name: "FitLife Wellness",
+    handle: "@fitlife.app",
+    url: "https://www.instagram.com/fitlife.app/",
+    logo: "images/fitlife.png",
+    testimonial:
+      "The fitness tracking app they built has exceptional UI/UX.",
+    rating: 5,
+    industry: "Health & Fitness"
+  }
 ];
 
 // Responsive rating stars
@@ -277,6 +267,7 @@ export const ClientsSection = () => {
                   <div className="text-left">
                     <h3 className="font-heading font-semibold text-sm md:text-base text-foreground">{client.name}</h3>
                     <p className="text-xs md:text-sm text-muted-foreground">{client.handle}</p>
+                    <p className="text-[10px] md:text-xs text-primary/80 mt-1">{client.industry}</p>
                   </div>
                 </div>
 
